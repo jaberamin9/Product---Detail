@@ -14,6 +14,8 @@ const tbody = document.querySelector("tbody");
 const totalItemQnt = document.getElementById("total-item-qnt");
 const totalItemPrice = document.getElementsByClassName("item-totla-price-mob");
 
+const baseURL = "https://github.com/jaberamin9/Product---Detail/blob/main";
+
 let storeData = {};
 let colorData = { value: "purple", colorCode: "#816BFF", imgUrl: "/assets/purple.jpg" };
 let priceData = { value: "S", price: 69 };
@@ -78,9 +80,9 @@ const colorSelector = () => {
         if (event.target.name === "color") {
             const selectedColor = event.target.value;
             const mainImage = document.getElementById("main-image");
-            mainImage.src = `/assets/${selectedColor}.jpg`;
+            mainImage.src = `${baseURL}/assets/${selectedColor}.jpg`;
             colorData.value = selectedColor;
-            colorData.imgUrl = `/assets/${selectedColor}.jpg`;
+            colorData.imgUrl = `${baseURL}/assets/${selectedColor}.jpg`;
         }
     });
 }
