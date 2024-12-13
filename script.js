@@ -14,7 +14,7 @@ const tbody = document.querySelector("tbody");
 const totalItemQnt = document.getElementById("total-item-qnt");
 const totalItemPrice = document.getElementsByClassName("item-totla-price-mob");
 
-const baseURL = "https://github.com/jaberamin9/Product---Detail/blob/main";
+const baseURL = "https://raw.githubusercontent.com/jaberamin9/Product---Detail/refs/heads/main";
 
 let storeData = {};
 let colorData = { value: "purple", colorCode: "#816BFF", imgUrl: "/assets/purple.jpg" };
