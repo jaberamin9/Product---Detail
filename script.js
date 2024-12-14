@@ -17,7 +17,7 @@ const totalItemPrice = document.getElementsByClassName("item-totla-price-mob");
 const baseURL = "https://raw.githubusercontent.com/jaberamin9/Product---Detail/refs/heads/main";
 
 let storeData = {};
-let colorData = { value: "purple", colorCode: "#816BFF", imgUrl: "/assets/purple.jpg" };
+let colorData = { value: "purple", colorCode: "#816BFF", imgUrl: `${baseURL}/assets/purple.jpg` };
 let priceData = { value: "S", price: 69 };
 let quantity = 1;
 
