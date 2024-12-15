@@ -13,6 +13,8 @@ const totalItem = document.getElementById("total-item");
 const tbody = document.querySelector("tbody");
 const totalItemQnt = document.getElementById("total-item-qnt");
 const totalItemPrice = document.getElementsByClassName("item-totla-price-mob");
+const mainImage = document.getElementById("main-image");
+const loader = document.getElementById("loader-box");
 
 const baseURL = "https://raw.githubusercontent.com/jaberamin9/Product---Detail/refs/heads/main";
 
@@ -79,10 +81,22 @@ const colorSelector = () => {
     radioGroupContainer.addEventListener("change", (event) => {
         if (event.target.name === "color") {
             const selectedColor = event.target.value;
-            const mainImage = document.getElementById("main-image");
-            mainImage.src = `${baseURL}/assets/${selectedColor}.jpg`;
+
             colorData.value = selectedColor;
             colorData.imgUrl = `${baseURL}/assets/${selectedColor}.jpg`;
+
+            loader.style.display = "flex";
+            mainImage.style.opacity = 0.4;
+            mainImage.src = `${baseURL}/assets/${selectedColor}.jpg`;
+
+            mainImage.onload = () => {
+                loader.style.display = "none";
+                mainImage.style.opacity = 1;
+            };
+            mainImage.onerror = () => {
+                loader.style.display = "none";
+                mainImage.style.opacity = 1;
+            };
         }
     });
 }
@@ -361,5 +375,21 @@ const showAllItemInModalMob = () => {
     totalItemPrice[0].textContent = totalPrice;
 }
 
+const firstImageLoad = () => {
+    loader.style.display = "flex";
+    mainImage.style.opacity = 0.4;
+    mainImage.src = `${baseURL}/assets/purple.jpg`;
+
+    mainImage.onload = () => {
+        loader.style.display = "none";
+        mainImage.style.opacity = 1;
+    };
+    mainImage.onerror = () => {
+        loader.style.display = "none";
+        mainImage.style.opacity = 1;
+    };
+}
+
+firstImageLoad();
 sizeSelector();
 colorSelector();
