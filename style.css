@@ -602,7 +602,7 @@ tr .color {
     gap: 24px;
 }
 
-.btn-continue-shopping {
+.btn-checkout {
     color: white;
     border: none;
     cursor: pointer;
@@ -618,7 +618,7 @@ tr .color {
 
 }
 
-.btn-checkout {
+.btn-continue-shopping {
     color: #364A63;
     cursor: pointer;
     padding: 8px 18px;
@@ -978,6 +978,10 @@ tr .color {
 
     .item-totla-mob-box {
         display: flex;
+    }
+
+    .cart-actions {
+        gap: 12px;
     }
 }
 
